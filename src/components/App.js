@@ -25,7 +25,7 @@ class App extends Component {
 
     handleKey(e) {
         e.preventDefault()
-        if (e.code === 'ArrowRight') {
+        if (e.keyCode == '39') {
             let position = this.state.posi + 5
             this.setState(prevState => ({
                 ballPosition: {
@@ -41,7 +41,7 @@ class App extends Component {
 
     //bind ArrowRight keydown event
     componentDidMount() {
-        document.addEventListener("keydown", this.handleKey)
+        document.addEventListener("keydown", this.handleKey, false)
     }
 
     render() {
